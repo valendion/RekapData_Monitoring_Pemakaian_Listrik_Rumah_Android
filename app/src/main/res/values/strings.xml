@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">sun_iot</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="berdasarkan">Berdasarkan</string>
+    <string name="realtime">Realtime</string>
+    <string name="about">About</string>
+    <string name="arus">Arus</string>
+    <string name="_100_a">100 A</string>
+    <string name="daya">Daya</string>
+    <string name="_100_watt">100 Watt</string>
+    <string name="daya_listrik">Daya Listrik</string>
+    <string name="_100_kwh">100 KWH</string>
+    <string name="_100_volt">100 volt</string>
+    <string name="tegangan">Tegangan</string>
+    <string name="biaya">Biaya</string>
+    <string name="rp_1_000_000">Rp 1.000.000</string>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/whitePrimary"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textElectric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daya Listrik"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Biaya"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textElectric" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="115dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDivider1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textElectric"
+            app:layout_constraintEnd_toStartOf="@+id/guideLine"
+            app:layout_constraintTop_toTopOf="@id/textElectric" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDivider2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/textCost"
+            app:layout_constraintEnd_toStartOf="@+id/guideLine"
+            app:layout_constraintTop_toTopOf="@id/textCost" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textElectricValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 100 KWH"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textElectric"
+            app:layout_constraintStart_toEndOf="@id/guideLine"
+            app:layout_constraintTop_toTopOf="@id/textElectric" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textCostValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=" Rp 1.000"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/guideLine"
+            app:layout_constraintTop_toTopOf="@+id/textCost"
+            app:layout_constraintBottom_toBottomOf="@+id/textCost"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "532047930236",
+    "firebase_url": "https://wattmeter-36101-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "wattmeter-36101",
+    "storage_bucket": "wattmeter-36101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532047930236:android:ac9475c2f0c6c61419faf9",
+        "android_client_info": {
+          "package_name": "com.belajar.sun_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532047930236-unl1f58sjhecqkjuc24keir9gnknf1o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBcJpver1u7kVIzx3Zi6XvAqwUZwEP9G8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532047930236-unl1f58sjhecqkjuc24keir9gnknf1o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
