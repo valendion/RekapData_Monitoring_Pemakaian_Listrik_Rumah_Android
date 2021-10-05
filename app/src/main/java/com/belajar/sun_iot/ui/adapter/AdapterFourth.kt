@@ -1,18 +1,28 @@
 package com.belajar.sun_iot.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.belajar.sun_iot.data.ModelDummy
+import com.belajar.sun_iot.data.ModelRecap
 import com.belajar.sun_iot.databinding.ListDataRecapBinding
+import com.belajar.sun_iot.utils.WritingFormat
 
 class AdapterFourth : RecyclerView.Adapter<AdapterFourth.MyViewHolder>() {
 
-    private var mData: MutableList<ModelDummy> = mutableListOf()
+    private var mData: MutableList<ModelRecap> = mutableListOf()
 
-    fun updateAdapter(data: ArrayList<ModelDummy>) {
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateAdapter(data: ArrayList<ModelRecap>) {
         mData.clear()
         mData.addAll(data)
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun clearItem(){
+        mData.clear()
         notifyDataSetChanged()
     }
 
@@ -34,8 +44,13 @@ class AdapterFourth : RecyclerView.Adapter<AdapterFourth.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         with(holder){
             itemViewList.apply {
-                textCostValue.text = mData[position].biaya.toString()
-                textElectricValue.text = mData[position].kwh.toString()
+                textCostValue.text =
+                    mData[position].biaya?.let { WritingFormat.formatRupiah(it.toInt()) }
+                textElectricValue.text = mData[position].kwh?.let {
+                    WritingFormat.formatPowerElectric(
+                        it.toInt()
+                    )
+                }
             }
         }
     }

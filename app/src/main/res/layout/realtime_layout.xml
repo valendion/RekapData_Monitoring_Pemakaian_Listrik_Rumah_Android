@@ -24,21 +24,27 @@
             android:gravity="start"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/electric_current" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/arus"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/textPrimary"
-
+                android:textStyle="bold"
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueCurrent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_100_a"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textColor="@color/textPrimary"
-
                 android:textSize="12sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -67,19 +73,27 @@
             android:gravity="start"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/daya"
-                android:textColor="@color/textPrimary"
-                android:textSize="16sp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/power" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/daya"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="16sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valuePower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/_100_watt"
                 android:textColor="@color/textPrimary"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textSize="12sp" />
 
 
@@ -107,21 +121,27 @@
             android:gravity="start"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/car_battery" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/daya_listrik"
+                android:textStyle="bold"
                 android:textColor="@color/textPrimary"
-
+                android:layout_marginTop="8dp"
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valuePowerElectricity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_100_kwh"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textColor="@color/textPrimary"
-
                 android:textSize="12sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -150,26 +170,34 @@
             android:gravity="start"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tegangan"
-                android:textColor="@color/textPrimary"
-                android:textSize="16sp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/antenna" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/tegangan"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="16sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueVoltage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/_100_volt"
                 android:textColor="@color/textPrimary"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardMainCost"
+        android:id="@+id/cardREcapCost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -190,19 +218,26 @@
             android:gravity="start"
             android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/biaya"
-                android:textColor="@color/textPrimary"
-                android:textSize="16sp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/budget" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/biaya"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/textPrimary"
+                android:textSize="16sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/rp_1_000_000"
                 android:textColor="@color/textPrimary"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:textSize="12sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

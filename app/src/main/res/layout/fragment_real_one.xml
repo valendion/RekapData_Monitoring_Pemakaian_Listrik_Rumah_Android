@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.realtime.RealOneFragment">
 
-    <include layout="@layout/realtime_layout"/>
+    <include
+        android:id="@+id/oneFragment"
+        layout="@layout/realtime_layout"/>
 
 </FrameLayout>

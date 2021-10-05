@@ -13,16 +13,35 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageVoltage"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/car_battery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textElectric"
+            app:layout_constraintTop_toTopOf="@id/textElectric"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textElectric"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Daya Listrik"
+            android:layout_marginStart="4dp"
             android:textColor="@color/textPrimary"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageVoltage"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageCost"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/budget"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textCost"
+            app:layout_constraintTop_toTopOf="@id/textCost"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textCost"
@@ -30,9 +49,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Biaya"
+            android:layout_marginStart="4dp"
             android:textColor="@color/textPrimary"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageCost"
             app:layout_constraintTop_toBottomOf="@+id/textElectric" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -71,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" 100 KWH"
+            android:layout_marginStart="8dp"
             android:textColor="@color/textPrimary"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/textElectric"
@@ -84,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text=" Rp 1.000"
+            android:layout_marginStart="8dp"
             android:textColor="@color/textPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/guideLine"

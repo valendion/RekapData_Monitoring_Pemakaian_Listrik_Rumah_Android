@@ -1,60 +1,72 @@
 package com.belajar.sun_iot.ui.fragment.realtime
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.belajar.sun_iot.R
+import com.belajar.sun_iot.data.ModelRealtime
+import com.belajar.sun_iot.databinding.FragmentRealOneBinding
+import com.belajar.sun_iot.databinding.FragmentRealThreeBinding
+import com.belajar.sun_iot.utils.WritingFormat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RealThreeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RealThreeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentRealThreeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_real_three, container, false)
+        _binding = FragmentRealThreeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RealThreeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RealThreeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var database =
+            FirebaseDatabase.getInstance("https://wattmeter-36101-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                .getReference("jalur_universal")
+        var user = ModelRealtime()
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+
+                    if (user != null) {
+                        user = snapshot.getValue(ModelRealtime::class.java)!!
+
+                        binding.threeFragment.apply {
+
+                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
+                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
+                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
+                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
+                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
+                        }
+                    }
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 }
