@@ -1,14 +1,11 @@
 package com.belajar.sun_iot.ui.fragment.realtime
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.belajar.sun_iot.R
 import com.belajar.sun_iot.data.ModelRealtime
-import com.belajar.sun_iot.databinding.FragmentRealOneBinding
 import com.belajar.sun_iot.databinding.FragmentRealThreeBinding
 import com.belajar.sun_iot.utils.WritingFormat
 import com.google.firebase.database.DataSnapshot
@@ -34,7 +31,7 @@ class RealThreeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var database =
-            FirebaseDatabase.getInstance("https://wattmeter-36101-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            FirebaseDatabase.getInstance("https://iotkwh-default-rtdb.firebaseio.com/")
                 .getReference("jalur_universal")
         var user = ModelRealtime()
         database.addValueEventListener(object : ValueEventListener {
@@ -46,11 +43,11 @@ class RealThreeFragment : Fragment() {
 
                         binding.threeFragment.apply {
 
-                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
-                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
-                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
-                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
-                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
+                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it.toDouble()) }
+                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it.toDouble()) }
+                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it.toDouble()) }
+                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it.toDouble())  }
+                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it.toDouble()) }
                         }
                     }
                 }

@@ -42,11 +42,11 @@ class RealFourFragment : Fragment() {
                     if (user != null) {
                         user = snapshot.getValue(ModelRealtime::class.java)!!
                         binding.fourFragment.apply {
-                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
-                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
-                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
-                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
-                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
+//                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
+//                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
+//                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
+//                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
+//                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
                         }
                     }
                 }

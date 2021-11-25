@@ -48,7 +48,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             try {
-                Toast.makeText(activity, "Berhasil oi", Toast.LENGTH_SHORT).show()
+
                 listDataRecap.apply {
                     adapter = mAdapter
                     layoutManager = LinearLayoutManager(activity)
@@ -61,13 +61,17 @@ class FirstFragment : Fragment() {
                 autoComplete.setText(autoComplete.adapter.getItem(0).toString(), false)
 
                 noData.root.visibility = View.INVISIBLE
-                LoadingList.showLoading(1, loadingLamp.pbLoading)
+
+//                LoadingList.showLoading(1, loadingLamp.pbLoading)
+                loadingUni.root.visibility = View.VISIBLE
+
                 NetworkConfig.instance.getLampHour().enqueue(object : Callback<ModelResponseRecap> {
                     override fun onResponse(
                         call: Call<ModelResponseRecap>,
                         response: Response<ModelResponseRecap>
                     ) {
-                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+                        loadingUni.root.visibility = View.INVISIBLE
                         noData.root.visibility = View.INVISIBLE
 
                         if (response.isSuccessful) {
@@ -96,7 +100,8 @@ class FirstFragment : Fragment() {
                     OnItemClickListener { adapterView, view, position, id ->
                         when (arrayAdapter.getItem(position)!!) {
                             "Jam" -> {
-                                LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                                LoadingList.showLoading(1, loadingLamp.pbLoading)
+                                loadingUni.root.visibility = View.INVISIBLE
                                 noData.root.visibility = View.INVISIBLE
                                 NetworkConfig.instance.getLampHour()
                                     .enqueue(object : Callback<ModelResponseRecap> {
@@ -104,7 +109,8 @@ class FirstFragment : Fragment() {
                                             call: Call<ModelResponseRecap>,
                                             response: Response<ModelResponseRecap>
                                         ) {
-                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
+                                            loadingUni.root.visibility = View.INVISIBLE
+//                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
                                             noData.root.visibility = View.INVISIBLE
 
                                             if (response.isSuccessful) {
@@ -134,14 +140,16 @@ class FirstFragment : Fragment() {
                             }
                             "Hari" -> {
                                 noData.root.visibility = View.INVISIBLE
-                                LoadingList.showLoading(1, loadingLamp.pbLoading)
+                                loadingUni.root.visibility = View.INVISIBLE
+//                                LoadingList.showLoading(1, loadingLamp.pbLoading)
                                 NetworkConfig.instance.getLampToday()
                                     .enqueue(object : Callback<ModelResponseRecap> {
                                         override fun onResponse(
                                             call: Call<ModelResponseRecap>,
                                             response: Response<ModelResponseRecap>
                                         ) {
-                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
+                                            loadingUni.root.visibility = View.INVISIBLE
+//                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
                                             noData.root.visibility = View.INVISIBLE
 
                                             if (response.isSuccessful) {
@@ -171,14 +179,16 @@ class FirstFragment : Fragment() {
                             }
                             else -> {
                                 noData.root.visibility = View.INVISIBLE
-                                LoadingList.showLoading(1, loadingLamp.pbLoading)
+                                loadingUni.root.visibility = View.VISIBLE
+//                                LoadingList.showLoading(1, loadingLamp.pbLoading)
                                 NetworkConfig.instance.getLampWeek()
                                     .enqueue(object : Callback<ModelResponseRecap> {
                                         override fun onResponse(
                                             call: Call<ModelResponseRecap>,
                                             response: Response<ModelResponseRecap>
                                         ) {
-                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
+                                            loadingUni.root.visibility = View.INVISIBLE
+//                                            LoadingList.showLoading(0, loadingLamp.pbLoading)
                                             noData.root.visibility = View.INVISIBLE
 
                                             if (response.isSuccessful) {

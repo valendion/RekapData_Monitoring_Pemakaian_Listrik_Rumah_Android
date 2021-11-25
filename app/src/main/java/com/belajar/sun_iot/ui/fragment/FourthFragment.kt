@@ -60,13 +60,13 @@ class FourthFragment : Fragment() {
             autoComplete.setText(autoComplete.adapter.getItem(0).toString(), false)
 
             noData.root.visibility = View.INVISIBLE
-            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//            LoadingList.showLoading(1, loadingLamp.pbLoading)
             NetworkConfig.instance.getKulkasHour().enqueue(object : Callback<ModelResponseRecap> {
                 override fun onResponse(
                     call: Call<ModelResponseRecap>,
                     response: Response<ModelResponseRecap>
                 ) {
-                    LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                    LoadingList.showLoading(0, loadingLamp.pbLoading)
                     noData.root.visibility = View.INVISIBLE
 
                     if (response.isSuccessful) {
@@ -96,7 +96,7 @@ class FourthFragment : Fragment() {
                 OnItemClickListener { adapterView, view, position, id ->
                     when (arrayAdapter.getItem(position)!!) {
                         "Jam" -> {
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             noData.root.visibility = View.INVISIBLE
                             NetworkConfig.instance.getKulkasHour()
                                 .enqueue(object : Callback<ModelResponseRecap> {
@@ -104,7 +104,7 @@ class FourthFragment : Fragment() {
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {
@@ -134,14 +134,14 @@ class FourthFragment : Fragment() {
                         }
                         "Hari" -> {
                             noData.root.visibility = View.INVISIBLE
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             NetworkConfig.instance.getKulkasToday()
                                 .enqueue(object : Callback<ModelResponseRecap> {
                                     override fun onResponse(
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {
@@ -171,14 +171,14 @@ class FourthFragment : Fragment() {
                         }
                         else -> {
                             noData.root.visibility = View.INVISIBLE
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             NetworkConfig.instance.getKulkasWeek()
                                 .enqueue(object : Callback<ModelResponseRecap> {
                                     override fun onResponse(
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {

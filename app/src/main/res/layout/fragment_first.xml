@@ -39,7 +39,7 @@
 
     <include
         android:visibility="invisible"
-        android:id="@+id/loadingLamp"
+        android:id="@+id/loadingUni"
         layout="@layout/progress_bar" />
 
     <include

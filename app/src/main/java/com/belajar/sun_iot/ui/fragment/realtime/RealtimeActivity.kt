@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.belajar.sun_iot.databinding.ActivityRealtimeBinding
 import com.belajar.sun_iot.ui.MainActivity
 import com.belajar.sun_iot.ui.adapter.AdapterTablayout
-import com.belajar.sun_iot.utils.FragmentAdapter
 
 class RealtimeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRealtimeBinding
-    private lateinit var adapterFragment: FragmentAdapter
     private val adapterTablayout = AdapterTablayout()
 
     override fun onCreate(savedInstanceState: Bundle?) {

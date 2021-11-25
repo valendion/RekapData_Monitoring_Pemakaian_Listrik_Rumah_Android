@@ -21,7 +21,7 @@ class AdapterThird : RecyclerView.Adapter<AdapterThird.MyViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun clearItem(){
+    fun clearItem() {
         mData.clear()
         notifyDataSetChanged()
     }
@@ -32,8 +32,7 @@ class AdapterThird : RecyclerView.Adapter<AdapterThird.MyViewHolder>() {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder
-    {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemBinding = ListDataRecapBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
@@ -42,13 +41,17 @@ class AdapterThird : RecyclerView.Adapter<AdapterThird.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        with(holder){
+        with(holder) {
             itemViewList.apply {
                 textCostValue.text =
-                    mData[position].biaya?.let { WritingFormat.formatRupiah(it.toInt()) }
+                    mData[position].biaya?.let {
+                        var cost = it.toDouble()
+                        WritingFormat.formatRupiah(cost)
+                    }
                 textElectricValue.text = mData[position].kwh?.let {
+                    var kwh = it.toDouble()
                     WritingFormat.formatPowerElectric(
-                        it.toInt()
+                        kwh
                     )
                 }
             }

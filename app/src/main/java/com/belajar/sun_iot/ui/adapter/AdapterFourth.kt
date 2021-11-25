@@ -45,10 +45,10 @@ class AdapterFourth : RecyclerView.Adapter<AdapterFourth.MyViewHolder>() {
         with(holder){
             itemViewList.apply {
                 textCostValue.text =
-                    mData[position].biaya?.let { WritingFormat.formatRupiah(it.toInt()) }
+                    mData[position].biaya?.let { WritingFormat.formatRupiah(it.toDouble()) }
                 textElectricValue.text = mData[position].kwh?.let {
                     WritingFormat.formatPowerElectric(
-                        it.toInt()
+                        it.toDouble()
                     )
                 }
             }

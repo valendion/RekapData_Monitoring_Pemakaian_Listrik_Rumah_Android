@@ -1,14 +1,11 @@
 package com.belajar.sun_iot.ui.fragment.realtime
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.belajar.sun_iot.R
 import com.belajar.sun_iot.data.ModelRealtime
-import com.belajar.sun_iot.databinding.FragmentRealThreeBinding
 import com.belajar.sun_iot.databinding.FragmentRealTwoBinding
 import com.belajar.sun_iot.utils.WritingFormat
 import com.google.firebase.database.DataSnapshot
@@ -44,11 +41,11 @@ class RealTwoFragment : Fragment() {
                     if (user != null) {
                         user = snapshot.getValue(ModelRealtime::class.java)!!
                         binding.fragmentTwo.apply {
-                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
-                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
-                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
-                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
-                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
+//                            valueCost.text = user.biaya?.let { WritingFormat.formatRupiah(it) }
+//                            valueCurrent.text = user.arus?.let { WritingFormat.formatCurrent(it) }
+//                            valuePower.text = user.daya?.let { WritingFormat.formatPower(it) }
+//                            valuePowerElectricity.text = user.kwh?.let { WritingFormat.formatPowerElectric(it)  }
+//                            valueVoltage.text = user.tegangan?.let { WritingFormat.formatVoltage(it) }
 //
                         }
                     }

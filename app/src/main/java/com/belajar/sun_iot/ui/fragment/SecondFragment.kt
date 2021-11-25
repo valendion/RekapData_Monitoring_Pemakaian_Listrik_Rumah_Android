@@ -56,13 +56,13 @@ class SecondFragment : Fragment() {
             autoComplete.setText(autoComplete.adapter.getItem(0).toString(), false)
 
             noData.root.visibility = View.INVISIBLE
-            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//            LoadingList.showLoading(1, loadingLamp.pbLoading)
             NetworkConfig.instance.getACHour().enqueue(object : Callback<ModelResponseRecap> {
                 override fun onResponse(
                     call: Call<ModelResponseRecap>,
                     response: Response<ModelResponseRecap>
                 ) {
-                    LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                    LoadingList.showLoading(0, loadingLamp.pbLoading)
                     noData.root.visibility = View.INVISIBLE
 
                     if (response.isSuccessful) {
@@ -90,7 +90,7 @@ class SecondFragment : Fragment() {
                 AdapterView.OnItemClickListener { adapterView, view, position, id ->
                     when (arrayAdapter.getItem(position)!!) {
                         "Jam" -> {
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             noData.root.visibility = View.INVISIBLE
                             NetworkConfig.instance.getACHour()
                                 .enqueue(object : Callback<ModelResponseRecap> {
@@ -98,7 +98,7 @@ class SecondFragment : Fragment() {
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {
@@ -128,14 +128,14 @@ class SecondFragment : Fragment() {
                         }
                         "Hari" -> {
                             noData.root.visibility = View.INVISIBLE
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             NetworkConfig.instance.getACToday()
                                 .enqueue(object : Callback<ModelResponseRecap> {
                                     override fun onResponse(
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {
@@ -165,14 +165,14 @@ class SecondFragment : Fragment() {
                         }
                         else -> {
                             noData.root.visibility = View.INVISIBLE
-                            LoadingList.showLoading(1, loadingLamp.pbLoading)
+//                            LoadingList.showLoading(1, loadingLamp.pbLoading)
                             NetworkConfig.instance.getACWeek()
                                 .enqueue(object : Callback<ModelResponseRecap> {
                                     override fun onResponse(
                                         call: Call<ModelResponseRecap>,
                                         response: Response<ModelResponseRecap>
                                     ) {
-                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
+//                                        LoadingList.showLoading(0, loadingLamp.pbLoading)
                                         noData.root.visibility = View.INVISIBLE
 
                                         if (response.isSuccessful) {

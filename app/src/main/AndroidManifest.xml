@@ -13,10 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sun_iot">
         <activity
+            android:name=".ui.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.AboutActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.fragment.realtime.RealtimeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,25 +5,25 @@ import java.util.*
 
 object WritingFormat {
 
-    fun formatRupiah(value: Int): String{
+    fun formatRupiah(value: Double): String{
         val localeID = Locale("in", "ID")
         val formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(localeID)
         return formatRupiah.format(value)
     }
 
-    fun formatVoltage(value: Int): String{
+    fun formatVoltage(value: Double): String{
         return "$value volt"
     }
 
-    fun formatCurrent(value: Int): String{
+    fun formatCurrent(value: Double): String{
         return "$value A"
     }
 
-    fun formatPower(value: Int): String{
+    fun formatPower(value: Double): String{
         return "$value Watt"
     }
 
-    fun formatPowerElectric(value: Int): String{
+    fun formatPowerElectric(value: Double): String{
         return "$value KWH"
     }
 
